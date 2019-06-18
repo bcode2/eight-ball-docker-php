@@ -1,0 +1,19 @@
+version: "3"
+services:
+ frontend:
+    image: php:7-apache
+    ports:
+      - 8080:80
+    # links:
+    #   - backend
+    volumes:
+       - ../frontend:/var/www/html
+    
+ backend:
+    container_name: backend
+    image: php:7-apache
+    volumes:
+      - ../api:/var/www/html
+    ports:
+      - 8085:80
+    
